@@ -4,7 +4,7 @@
 请使用platformIO 导入工程ElectricDog
 
 ## 视频链接：
-[B站视频--功能演示及介绍](https://www.bilibili.com/)
+[B站视频--功能演示及介绍](https://www.bilibili.com/video/BV1S6bFe2ECe?vd_source=57a411a8032536392b8e1a512faf8546)
 ## 项目简介
 
 本项目是基于ESP8266设计、基于arduino开发的电子小狗，项目同时运行了ESP8266网络服务器、WS2812驱动、舵机驱动、oled显示等功能。可以实现Wi-Fi控制
