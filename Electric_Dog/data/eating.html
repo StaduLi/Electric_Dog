@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am EATING!</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .message-container {
+            text-align: center;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 88px rgba(0, 0, 0, 0.1);
+        }
+
+        .big-message {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .small-message {
+            font-size: 18px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .fork-spoon-icon {
+            font-size: 60px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="message-container">
+        <i class="fork-spoon-icon">&#x1F374;</i>
+        <div class="big-message">嘿！别打扰我！</div>
+        <div class="small-message">我正在享受美食呢，在我吃完之前，你不能操控我哦。</div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            let sendRequest = new XMLHttpRequest();
+            sendRequest.open("GET", "http://192.168.5.1/getDogState", true);
+            sendRequest.send(null);
+
+
+            sendRequest.onreadystatechange = function () {
+                if (sendRequest.readyState === 4 && sendRequest.status === 200) {
+                    let recData = sendRequest.responseText;
+                    if (recData == "NULL")
+                        location.assign('./control.html');
+                }
+            };
+        }, 1000);
+    </script>
+</body>
+
+</html>

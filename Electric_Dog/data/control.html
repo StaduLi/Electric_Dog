@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Dog</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      background-color: white;
+      color: black;
+      padding: 10px 0;
+      border: 1px solid #555;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    li {
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      padding: 15px 15px;
+      border-radius: 4px;
+      /* 添加圆角效果 */
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+
+    /* 初始状态下不显示线条 */
+    li::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: #b694c3;
+      border-radius: 4px;
+      /* 添加圆角效果 */
+      transition: width 0.3s ease, left 0.3s ease;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
+    /* 选中状态下显示线条 */
+    li.active::after {
+      width: 100%;
+    }
+
+    li.active a {
+      color: #b694c3;
+    }
+
+    /* 媒体查询，当页面宽度小于一定值时调整样式 */
+    @media (max-width: 768px) {
+      nav {
+        width: 90%;
+        padding: 5px 0;
+      }
+
+      li {
+        padding: 5px 10px;
+      }
+
+      a {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <style>
+    /* 容器样式 */
+    #joystickContainer {
+      position: relative;
+      left: 8vw;
+      top: 5vw;
+      width: 80vw;
+      height: 80vw;
+    }
+
+    /* 摇杆背景样式 */
+    #joystickBackground {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #e6e6e6;
+      border-radius: 50%;
+    }
+
+    /* 摇杆样式 */
+    #joystick {
+      position: absolute;
+      width: 48vw;
+      height: 48vw;
+      background-color: #b8dbd6;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    button {
+      position: relative;
+      padding: 15px 13%;
+      left: auto;
+      margin: 5px;
+      border: none;
+      border-radius: 10px;
+      background-color: #b8dbd6;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+    }
+
+    #buttons {
+      position: relative;
+      margin-top: 6vh;
+      left: 11vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <nav>
+      <ul>
+        <li class="active"><a href="control.html">小狗控制</a></li>
+        <li><a href="advanced_control.html">高级控制</a></li>
+        <li><a href="about_electric_dog.html">关于电子小狗</a></li>
+        <li><a href="contact_the_author.html">联系作者</a></li>
+      </ul>
+    </nav>
+
+    <div id="joystickContainer">
+      <div id="joystickBackground"></div>
+      <div id="joystick"></div>
+    </div>
+    <div id="buttons">
+      <button id="lie-down">趴下</button>
+      <button  id="stand-up">起立</button>
+      <button id="swing">摇摆</button>
+      <button id="shake-hands">握手</button>
+      <button id="stretch">伸懒腰</button>
+      <button id="act-cute">卖萌</button>
+    </div>
+
+
+  </div>
+  <script src="control.js">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        } */
+
+    .message-container {
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 88px rgba(0, 0, 0, 0.1);
+    }
+
+    .big-message {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .small-message {
+      font-size: 18px;
+      color: #666;
+      font-weight: bold;
+    }
+
+    .fork-spoon-icon {
+      font-size: 60px;
+      color: #999;
+    }
+
+    nav {
+      background-color: white;
+      color: black;
+      padding: 10px 0;
+      border: 1px solid #555;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    li {
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease;
+      padding: 15px 15px;
+      border-radius: 4px;
+      /* 添加圆角效果 */
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+
+    /* 初始状态下不显示线条 */
+    li::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: #b694c3;
+      border-radius: 4px;
+      /* 添加圆角效果 */
+      transition: width 0.3s ease, left 0.3s ease;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
+    /* 选中状态下显示线条 */
+    li.active::after {
+      width: 100%;
+    }
+
+    li.active a {
+      color: #b694c3;
+    }
+
+    /* 媒体查询，当页面宽度小于一定值时调整样式 */
+    @media (max-width: 768px) {
+      nav {
+        width: 90%;
+        padding: 5px 0;
+      }
+
+      li {
+        padding: 5px 10px;
+      }
+
+      a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="control.html">小狗控制</a></li>
+      <li><a href="advanced_control.html">高级控制</a></li>
+      <li class="active"><a href="about_electric_dog.html">关于电子小狗</a></li>
+      <li><a href="contact_the_author.html">联系作者</a></li>
+    </ul>
+  </nav>
+
+  <div class="message-container">
+    <div class="big-message">Electric Dog</div>
+    <div class="small-message">
+      本产品由银河资源开发基于ESP8266进行开发，您可以通过Wi-Fi连接进行控制。
+      <br>
+      <br>
+      如果您想复刻,可能涉及到以下基础知识：
+      <br>
+      一、软件基本知识
+      <br>
+      1.C/C++基础语法；
+      <br>
+      2.基于PlatformIO平台控制ESP8266的相关知识；
+      <br>
+      3.舵机控制，运动步态控制；
+      <br>
+      4.基于u8g2库的oled控制；
+      <br>
+      5.基于FastLED库的ws2812控制；
+      <br>
+      6.ESP8266 Wi-Fi服务端搭建；
+      <br>
+      7.ESP8266 强制门户；
+
+      <br>
+      8.html、js、css简单了解应用（搭建网页客户端）；
+      <br>
+      9.Ajax简单应用；
+
+      <br>
+      二、硬件知识：
+      <br>
+      1.PCB简单设计（基于立创EDA）；
+      <br>
+      2.3D简单建模（基于SolidWork）；
+      <br>
+      3.ESP12f最小系统电路；
+      <br>
+      4.供电电源电路；
+      <br>
+      5.mos管的简单理解应用；
+      <br>
+      <br>
+      此外 这里强烈建议使用AI工具来进行软件及硬件电路的学习和辅助设计。（如免费大模型豆包）；
+      <br>
+      若要学习ESP8266涉及的相关物联网知识，这里强烈推荐 太极创客 网站。
+      <br>
+      <br>
+      本项目已开源，详见Github。
+
+
+
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>
